@@ -12,7 +12,11 @@ function App() {
     setToDos((currentArray) => [toDo, ...currentArray]);
     setToDo("");
   };
-  console.log(toDos);
+
+  const deleteBtn = (event) => {
+    const li = event.target.parentElement;
+    li.remove();
+  };
 
   return (
     <div>
@@ -28,8 +32,11 @@ function App() {
       </form>
       <hr />
       <ul>
-        {toDos.map((value, index) => (
-          <li key={index}>{value}</li>
+        {toDos.map((item, index) => (
+          <li key={index}>
+            {item}
+            <button onClick={deleteBtn}>❌</button>
+          </li>
         ))}
       </ul>
     </div>
