@@ -1,11 +1,8 @@
 import PropTypes from "prop-types";
+import styles from "./Button.module.css";
 
 const Button = ({ text }) => {
-  return <button>{text}</button>;
-};
-
-Button.PropTypes = {
-  text: PropTypes.string.isRequired,
+  return <button className={styles.btn}>{text}</button>;
 };
 
 export default Button;
